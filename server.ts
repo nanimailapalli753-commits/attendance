@@ -701,5 +701,9 @@ app.get("/api/students/count", async (_req, res) => {
     process.exit(1);
   }
 }
+export { app };
 
-startServer();
+// Start the Express server only when running locally
+if (!process.env.NETLIFY) {
+  startServer();
+}
